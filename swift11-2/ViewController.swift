@@ -79,20 +79,51 @@ class ViewController: UIViewController {
     
     @IBAction func ButtonSbutrction(_ sender: Any) {
         temp = Double(Result.text!)!
+        if operatorFlag2 == 0
+        {
+            temp2 = temp
+        }
         Result.text = ""
         operatorFlag = 2
+        if operatorFlag2==0
+        {
+        }
+        else
+        {
+            temp2 = temp2 - temp
+        }
+        operatorFlag2 = operatorFlag2 + 1
     }
     
     @IBAction func ButtonMultiolication(_ sender: Any) {
         temp = Double(Result.text!)!
+        if operatorFlag2 == 0
+        {
+            temp2 = temp
+        }
         Result.text = ""
         operatorFlag = 3
+        if operatorFlag2 == 0{
+        }
+        else{
+            temp2 = temp2 * temp
+        }
+        operatorFlag2 = operatorFlag2 + 1
     }
     
     @IBAction func ButtonDivision(_ sender: Any) {
         temp = Double(Result.text!)!
+        if operatorFlag2==0 {
+            temp2 = temp
+        }
         Result.text = ""
         operatorFlag = 4
+        if operatorFlag2 == 0{
+        }
+        else{
+            temp2 = temp2 / temp
+        }
+        operatorFlag2 = operatorFlag2 + 1
     }
     
     @IBAction func ButtonEqual(_ sender: Any) {
@@ -100,8 +131,8 @@ class ViewController: UIViewController {
         case 1:
             if operatorFlag2==1
             {
-            temp = temp + Double(Result.text!)!
-            Result.text = "\(temp)"
+                temp = temp + Double(Result.text!)!
+                Result.text = "\(temp)"
                 operatorFlag2 = 0
             }
             else
@@ -110,14 +141,44 @@ class ViewController: UIViewController {
                 operatorFlag2 = 0
             }
         case 2:
-            temp = temp - Double(Result.text!)!
-            Result.text = "\(temp)"
+            if operatorFlag2==1
+            {
+                temp = temp - Double(Result.text!)!
+                Result.text = "\(temp)"
+                operatorFlag2 = 0
+            }
+            else
+            {
+                temp2 = temp2 - Double(Result.text!)!
+                Result.text = "\(temp2)"
+                operatorFlag2 = 0
+            }
         case 3:
-            temp = temp * Double(Result.text!)!
-            Result.text = "\(temp)"
+            if operatorFlag2 == 1
+            {
+                temp = temp * Double(Result.text!)!
+                Result.text = "\(temp)"
+                operatorFlag2 = 0
+            }
+            else
+            {
+                temp2 = temp2 * Double(Result.text!)!
+                Result.text = "\(temp2)"
+                operatorFlag2 = 0
+            }
         case 4:
-            temp = temp / Double(Result.text!)!
-            Result.text = "\(temp)"
+            if operatorFlag2 == 1
+            {
+                temp = temp / Double(Result.text!)!
+                Result.text = "\(temp)"
+                operatorFlag2 = 0
+            }
+            else
+            {
+                temp2 = temp2 / Double(Result.text!)!
+                Result.text = "\(temp2)"
+                operatorFlag2 = 0
+            }
         default:
             print("Nothing")
         }
