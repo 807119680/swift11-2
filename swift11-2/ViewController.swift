@@ -11,48 +11,88 @@ import UIKit
 class ViewController: UIViewController {
     var temp:Double = 0
     var temp2:Double = 0
+    var temp3:Double = 0
     var operatorFlag = 0
     var operatorFlag2 = 0
+    var operatorFlag3 = 0
     @IBOutlet weak var Result: UITextField!
     @IBAction func Button1(_ sender: Any) {
+        if operatorFlag3==0 {
+            Result.text = ""
+        }
+        operatorFlag3 = operatorFlag3 + 1
         Result.text = Result.text! + "1"
+        
     }
     
     @IBAction func Button2(_ sender: Any) {
+        if operatorFlag3==0 {
+            Result.text = ""
+        }
+        operatorFlag3 = operatorFlag3 + 1
         Result.text = Result.text! + "2"
     }
     
     @IBAction func Button3(_ sender: Any) {
+        if operatorFlag3==0 {
+            Result.text = ""
+        }
+        operatorFlag3 = operatorFlag3 + 1
         Result.text = Result.text! + "3"
     }
     
     @IBAction func Button4(_ sender: Any) {
+        if operatorFlag3==0 {
+            Result.text = ""
+        }
+        operatorFlag3 = operatorFlag3 + 1
         Result.text = Result.text! + "4"
     }
     
     @IBAction func Button5(_ sender: Any) {
+        if operatorFlag3==0 {
+            Result.text = ""
+        }
+        operatorFlag3 = operatorFlag3 + 1
         Result.text = Result.text! + "5"
     }
     
     @IBAction func Button6(_ sender: Any) {
+        if operatorFlag3==0 {
+            Result.text = ""
+        }
+        operatorFlag3 = operatorFlag3 + 1
         Result.text = Result.text! + "6"
     }
     
     @IBAction func Button7(_ sender: Any) {
+        if operatorFlag3==0 {
+            Result.text = ""
+        }
+        operatorFlag3 = operatorFlag3 + 1
         Result.text = Result.text! + "7"
     }
     
     @IBAction func Button8(_ sender: Any) {
+        if operatorFlag3==0 {
+            Result.text = ""
+        }
+        operatorFlag3 = operatorFlag3 + 1
         Result.text = Result.text! + "8"
     }
     
     @IBAction func Button9(_ sender: Any) {
+        if operatorFlag3==0 {
+            Result.text = ""
+        }
+        operatorFlag3 = operatorFlag3 + 1
         Result.text = Result.text! + "9"
     }
 
     @IBAction func ButtonAC(_ sender: Any) {
-        Result.text = ""
+        Result.text = "0"
         operatorFlag2 = 0
+        operatorFlag3 = 0
     }
     
     @IBAction func Button0(_ sender: Any) {
@@ -124,6 +164,13 @@ class ViewController: UIViewController {
             temp2 = temp2 / temp
         }
         operatorFlag2 = operatorFlag2 + 1
+    }
+    
+    @IBAction func ButtonSymbol(_ sender: Any) {
+        temp3 = Double(Result.text!)!
+        temp3 = temp3 * -1
+        Result.text = "\(temp3)"
+        
     }
     
     @IBAction func ButtonEqual(_ sender: Any) {
