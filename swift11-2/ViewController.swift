@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var operatorFlag = 0
     var operatorFlag2 = 0
     var operatorFlag3 = 0
+    var s:String = ""
     @IBOutlet weak var Result: UITextField!
     @IBAction func Button1(_ sender: Any) {
         if operatorFlag3==0 {
@@ -179,7 +180,8 @@ class ViewController: UIViewController {
             if operatorFlag2==1
             {
                 temp = temp + Double(Result.text!)!
-                Result.text = "\(temp)"
+                s = "\(temp)"
+                Result.text = s
                 operatorFlag2 = 0
             }
             else
@@ -217,13 +219,15 @@ class ViewController: UIViewController {
             if operatorFlag2 == 1
             {
                 temp = temp / Double(Result.text!)!
-                Result.text = "\(temp)"
+                s = String(format:"%.8f", temp)
+                Result.text = s
                 operatorFlag2 = 0
             }
             else
             {
                 temp2 = temp2 / Double(Result.text!)!
-                Result.text = "\(temp2)"
+                s = String(format: "%.8f", temp2)
+                Result.text = s
                 operatorFlag2 = 0
             }
         default:
