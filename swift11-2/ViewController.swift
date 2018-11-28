@@ -219,14 +219,14 @@ class ViewController: UIViewController {
             if operatorFlag2 == 1
             {
                 temp = temp / Double(Result.text!)!
-                s = String(format:"%.8f", temp)
+                s = String(format:"%.9f", temp)
                 Result.text = s
                 operatorFlag2 = 0
             }
             else
             {
                 temp2 = temp2 / Double(Result.text!)!
-                s = String(format: "%.8f", temp2)
+                s = String(format: "%.9f", temp2)
                 Result.text = s
                 operatorFlag2 = 0
             }
